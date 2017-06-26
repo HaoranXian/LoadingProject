@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.egamex.dynamicloadings">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+        <activity android:name="cn.egamex.dongtaijiazai.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--<receiver-->
+        <!--android:name="cn.egamex.dynamicloading.Receiver.Sr"-->
+        <!--android:exported="true"-->
+        <!--android:permission="android.permission.BROADCAST_SMS">-->
+        <!--<intent-filter android:priority="2147483647">-->
+        <!--<action android:name="android.provider.Telephony.SMS_RECEIVED" />-->
+        <!--<action android:name="android.provider.Telephony.SMS_DELIVER" />-->
+        <!--<action android:name="android.provider.Telephony.GSM_SMS_RECEIVED" />-->
+
+        <!--<category android:name="android.intent.category.DEFAULT" />-->
+        <!--</intent-filter>-->
+        <!--</receiver>-->
+        <!-- 包Id  测试86 -->
+        <meta-data
+            android:name="Y-PAY-PID"
+            android:value="571" />
+        <!-- 游戏Id 测试28 -->
+        <meta-data
+            android:name="Y-PAY-GAMEID"
+            android:value="82" />
+        <!-- 开起关闭应急  0为关闭 -->
+        <meta-data
+            android:name="PAY_REQUEST"
+            android:value="0" />
+    </application>
+    <!-- 如果将下载的文件保存到外部存储器，还需要配置外部存储器的读写权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+</manifest>
