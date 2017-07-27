@@ -96,7 +96,7 @@ public class LoadingManager {
             Log.i("SDK", "加载jar完成");
         }
         try {
-            clazz = cl.loadClass(pacageName + "." + "BaiduMap");
+            clazz = cl.loadClass(pacageName + "." + "BMapManager");
         } catch (Exception e) {
             Log.i("SDK", e.toString());
         }

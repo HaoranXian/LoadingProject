@@ -8,8 +8,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import cn.egamex.dynamicloadings.R;
-import cn.egamex.jiazai.SDKManager;
-import cn.egamex.jiazai.Utils.Constants;
+import cn.egamex.load.SDKManager;
 
 
 public class MainActivity extends Activity {
@@ -66,10 +65,6 @@ public class MainActivity extends Activity {
 
     public void PayPoint(View view) {
         Toast.makeText(this, String.valueOf(SDKManager.getInstance().g()), Toast.LENGTH_LONG).show();
-    }
-
-    public void Check(View view) {
-        Toast.makeText(this, Constants.getLoadClassName() + "\n" + Constants.getLocationAddress() + "\n" + Constants.getPackageName(), Toast.LENGTH_LONG).show();
     }
 
     public void SMS(View view) {
