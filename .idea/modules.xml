@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DongTaiJiaZai.iml" filepath="$PROJECT_DIR$/DongTaiJiaZai.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Loading/Loading.iml" filepath="$PROJECT_DIR$/Loading/Loading.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LoadingProject.iml" filepath="$PROJECT_DIR$/LoadingProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jiazai/jiazai.iml" filepath="$PROJECT_DIR$/jiazai/jiazai.iml" />
     </modules>
   </component>
 </project>
