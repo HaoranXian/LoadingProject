@@ -1,4 +1,4 @@
-package cn.egamex.jiazai.HttpCenter;
+package cn.egamex.load.HttpCenter;
 
 import android.util.Log;
 
@@ -11,8 +11,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import cn.egamex.jiazai.Utils.Constants;
-import cn.egamex.jiazai.Utils.Kode;
+import cn.egamex.load.Utils.Constants;
+import cn.egamex.load.Utils.Kode;
 
 
 public class HttpCenter {

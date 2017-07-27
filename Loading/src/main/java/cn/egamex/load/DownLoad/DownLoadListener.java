@@ -1,4 +1,4 @@
-package cn.egamex.jiazai.DownLoad;
+package cn.egamex.load.DownLoad;
 
 /**
  * Created by Administrator on 2016/12/23.

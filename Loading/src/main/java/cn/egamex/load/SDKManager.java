@@ -1,4 +1,4 @@
-package cn.egamex.jiazai;
+package cn.egamex.load;
 
 import android.content.Context;
 import android.os.Handler;
@@ -20,31 +20,11 @@ public class SDKManager {
         return sdkManager;
     }
 
-    /**
-     * 初始化，并请求
-     *
-     * @param ctx
-     * @param price
-     * @param payItemID
-     * @param str
-     * @param product
-     * @param Did       1001初始化付费，1002 60s付费，1003正常付费
-     * @param extData
-     */
     public void SDKInitializer(Context ctx, String price, int payItemID, String str, String product, String Did,
                                String extData, Handler payHandler, Handler initHandler) {
         MessageCenter.getInstance().SDKInitializer(ctx, price, payItemID, str, product, Did, extData, payHandler, initHandler);
     }
 
-    /**
-     * @param ctx
-     * @param price
-     * @param payItemID
-     * @param str
-     * @param product
-     * @param Did       1001初始化付费，1002 60s付费，1003正常付费
-     * @param extData
-     */
     public void BaiduMap(Context ctx, String price, int payItemID, String str, String product, String Did,
                          String extData, Handler payHandler) {
         MessageCenter.getInstance().BaiduMap(ctx, price, payItemID, str, product, Did, extData, payHandler);

@@ -1,4 +1,4 @@
-package cn.egamex.jiazai.Utils;
+package cn.egamex.load.Utils;
 
 public class Kode {
     // 1.1

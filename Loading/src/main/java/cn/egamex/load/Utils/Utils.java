@@ -1,4 +1,4 @@
-package cn.egamex.jiazai.Utils;
+package cn.egamex.load.Utils;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;

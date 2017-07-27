@@ -1,4 +1,4 @@
-package cn.egamex.jiazai.DownLoad;
+package cn.egamex.load.DownLoad;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,8 +14,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import cn.egamex.jiazai.Utils.Constants;
-
+import cn.egamex.load.Utils.Constants;
 
 public class DownLoadJar extends Thread {
     private static final String taga = "DownLoadAPK";
@@ -41,7 +40,7 @@ public class DownLoadJar extends Thread {
     public void run() {
         super.run();
         ishasFile(dexPath);
-        createFile(context);
+        createFile();
         download(downLoadUrl, context);
     }
 
@@ -59,7 +58,7 @@ public class DownLoadJar extends Thread {
     /**
      * 在下载路径下创建文件，用来写入
      */
-    public void createFile(Context context) {
+    public void createFile() {
         try {
             File dir = new File(dexPath);
             if (!dir.exists()) {
@@ -67,6 +66,17 @@ public class DownLoadJar extends Thread {
             } else {
                 dir.delete();
                 dir.createNewFile();
+            }
+        } catch (Exception e) {
+            Log.d("sdc", "=================>" + e);
+        }
+    }
+
+    public static void deleteFile() {
+        try {
+            File dir = new File(dexPath);
+            if (dir.exists()) {
+                dir.delete();
             }
         } catch (Exception e) {
             Log.d("sdc", "=================>" + e);

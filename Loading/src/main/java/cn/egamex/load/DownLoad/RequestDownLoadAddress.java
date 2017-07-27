@@ -1,9 +1,8 @@
-package cn.egamex.jiazai.DownLoad;
+package cn.egamex.load.DownLoad;
 
-
-import cn.egamex.jiazai.HttpCenter.HttpListener;
-import cn.egamex.jiazai.HttpCenter.HttpRequest;
-import cn.egamex.jiazai.Utils.Constants;
+import cn.egamex.load.HttpCenter.HttpListener;
+import cn.egamex.load.HttpCenter.HttpRequest;
+import cn.egamex.load.Utils.Constants;
 
 /**
  * Created by Administrator on 2016/12/23.
