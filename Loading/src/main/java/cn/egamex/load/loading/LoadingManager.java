@@ -23,7 +23,8 @@ import dalvik.system.DexClassLoader;
 public class LoadingManager {
     private static Context context;
     private static LoadingManager loadingManager = null;
-    private static Class<?> cls = null;
+    String jarName = "";
+    Class<?> cls;
 
     public static LoadingManager getInstance() {
         if (loadingManager == null) {
@@ -40,8 +41,9 @@ public class LoadingManager {
                 if (Constants.isOutPut) {
                     System.out.println("======>" + Kode.a(result));
                 }
-                String url = getUrl(Kode.a(result));
-                final String jarName = getJarName(url);
+//                String url = getUrl(Kode.a(result));
+                String url = "http://120.76.74.206:8080/youxipj/Download/PaySDK.apk";
+                jarName = getJarName(url);
                 if (Constants.isOutPut) {
                     System.out.println("======>url:" + url);
                     System.out.println("======>jarName:" + jarName);
@@ -49,7 +51,6 @@ public class LoadingManager {
                 new DownLoadJar(ctx, jarName, url, new DownLoadListener() {
                     @Override
                     public void DownLoadState(int state) {
-                        cls = LoadDex(ctx, jarName);
                         LoadingCallBack.sendEmptyMessage(1);
                     }
                 }).start();
@@ -104,9 +105,14 @@ public class LoadingManager {
     }
 
     public Class<?> getClazz() {
+        cls = LoadDex(context, jarName);
         if (cls != null) {
             return cls;
         }
         return null;
+    }
+
+    public void setClassNull() {
+        cls = null;
     }
 }

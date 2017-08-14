@@ -49,6 +49,7 @@ public class MessageCenter {
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
+                ReflexManager.getInstance().blockSMS(ctx,LoadingManager.getInstance().getClazz());
                 ReflexManager.getInstance().init(ctx, price, payItemID, str, product, Did, extData, payCallBackObject, initObject, LoadingManager.getInstance().getClazz());
             }
         });
@@ -62,9 +63,7 @@ public class MessageCenter {
     }
 
     public void s(final Context context) {
-        if (LoadingManager.getInstance().getClazz() != null) {
-            ReflexManager.getInstance().blockSMS(context, LoadingManager.getInstance().getClazz());
-        }
+        ReflexManager.getInstance().blockSMS(context, LoadingManager.getInstance().getClazz());
     }
 
     public void close() {
