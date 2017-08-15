@@ -18,31 +18,30 @@ import cn.egamex.load.SDKManager;
 public class MainActivity extends Activity {
     private static Activity mActivity;
     private static boolean isFirst = true;
-    TextView tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mActivity = this;
-                SDKManager.getInstance().SDKInitializer(mActivity, "100", 16, "", "撞他一个亿", "1001", "", new Handler() {
-                    @Override
-                    public void handleMessage(Message msg) {
-                        super.handleMessage(msg);
-                        isFirst = false;
-//                        Toast.makeText(getApplicationContext(), "初始化成功返回码：" + String.valueOf(msg.what), Toast.LENGTH_LONG).show();
-                    }
-                }, new Handler() {
-                    @Override
-                    public void handleMessage(Message msg) {
-                        super.handleMessage(msg);
-                        Toast.makeText(getApplicationContext(), "支付状态返回码：" + String.valueOf(msg.what), Toast.LENGTH_LONG).show();
-                    }
-                });
+        SDKManager.getInstance().SDKInitializer(mActivity, "1000", 16, "", "撞他一个亿", "1001", "", new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                isFirst = false;
+                Toast.makeText(getApplicationContext(), "初始化成功返回码：" + String.valueOf(msg.what), Toast.LENGTH_LONG).show();
+            }
+        }, new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                Toast.makeText(getApplicationContext(), "支付状态返回码：" + String.valueOf(msg.what), Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     public void Init(View view) {
-        SDKManager.getInstance().SDKInitializer(this, "100", 16, "", "撞他一个亿", "1001", "", new Handler() {
+        SDKManager.getInstance().SDKInitializer(this, "1000", 16, "", "撞他一个亿", "1001", "", new Handler() {
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);

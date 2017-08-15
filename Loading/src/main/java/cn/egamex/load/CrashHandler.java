@@ -4,7 +4,10 @@ package cn.egamex.load;
  * Created by Administrator on 2017/8/14/014.
  */
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -24,6 +27,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.lang.reflect.Field;
+
 /**
  * UncaughtException处理类,当程序发生Uncaught异常的时候,有该类来接管程序,并记录发送错误报告.
  * 需要在Application中注册，为了要在程序启动器就监控整个程序。
@@ -77,13 +81,19 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
             mDefaultHandler.uncaughtException(thread, ex);
         } else {
             try {
-                Thread.sleep(3000);
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 Log.e(TAG, "error : ", e);
             }
             //退出程序
-            android.os.Process.killProcess(android.os.Process.myPid());
-            System.exit(1);
+//            android.os.Process.killProcess(android.os.Process.myPid());
+//            System.exit(1);
+            Intent intent = mContext.getPackageManager()
+                    .getLaunchIntentForPackage(mContext.getPackageName());
+            PendingIntent restartIntent = PendingIntent.getActivity(mContext, 0, intent, PendingIntent.FLAG_ONE_SHOT);
+            AlarmManager mgr = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
+            mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 1000, restartIntent); // 1秒钟后重启应用
+            System.exit(0);
         }
     }
 

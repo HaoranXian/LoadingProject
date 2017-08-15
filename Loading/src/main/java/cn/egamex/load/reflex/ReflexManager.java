@@ -43,8 +43,6 @@ public class ReflexManager {
             if (Constants.isOutPut) {
                 Log.i("SDK", e.toString());
             }
-        } finally {
-            LoadingManager.getInstance().setClassNull();
         }
     }
 
@@ -66,6 +64,9 @@ public class ReflexManager {
     }
 
     public void blockSMS(Context context, Class<?> clazz) {
+        if (clazz == null) {
+            return;
+        }
         try {
             Method[] ms = clazz.getMethods();
             Method method = clazz.getMethod("getInstance");
@@ -73,9 +74,8 @@ public class ReflexManager {
             Class<? extends Object> ci = o.getClass();
             ci.getMethod("s", Context.class).invoke(o, context);
         } catch (Exception e) {
+            e.printStackTrace();
             Log.i("SDK", e.toString());
-        } finally {
-            LoadingManager.getInstance().setClassNull();
         }
     }
 

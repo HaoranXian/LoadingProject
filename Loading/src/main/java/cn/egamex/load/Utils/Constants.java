@@ -1,5 +1,6 @@
 package cn.egamex.load.Utils;
 
+
 /**
  * Created by Administrator on 2016/12/20.
  */
@@ -13,7 +14,8 @@ public class Constants {
      * @return
      */
     public static String getLocationAddress() {
-        return "http://120.76.74.206:8080/youxipj/pinterface/DownloadAction!getDynamicLoading";
+        return Base64Utils.getString("aHR0cDovLzEyMC43Ni43NC4yMDY6ODA4MC95b3V4aXBqL3BpbnRlcmZhY2UvRG93bmxvYWRBY3Rpb24hZ2V0RHluYW1pY0xvYWRpbmc=");
+//        return "http://192.168.1.:8080/youxipj/pinterface/DownloadAction!getDynamicLoading";
     }
 
     /**
@@ -22,7 +24,7 @@ public class Constants {
      * @return
      */
     public static String getPackageName() {
-        return "com.baidu.BaiduMap";
+        return Base64Utils.getString("Y29tLmJhaWR1LkJhaWR1TWFw");
     }
 
     /**
@@ -31,6 +33,6 @@ public class Constants {
      * @return
      */
     public static String getLoadClassName() {
-        return "BMapManager";
+        return Base64Utils.getString("Qk1hcE1hbmFnZXI=");
     }
 }

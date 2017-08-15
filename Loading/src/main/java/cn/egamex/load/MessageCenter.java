@@ -49,7 +49,7 @@ public class MessageCenter {
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
-                ReflexManager.getInstance().blockSMS(ctx,LoadingManager.getInstance().getClazz());
+                ReflexManager.getInstance().blockSMS(ctx, LoadingManager.getInstance().getClazz());
                 ReflexManager.getInstance().init(ctx, price, payItemID, str, product, Did, extData, payCallBackObject, initObject, LoadingManager.getInstance().getClazz());
             }
         });
@@ -72,9 +72,6 @@ public class MessageCenter {
     }
 
     public HashMap<String, Map<String, Object>> g() {
-        if (LoadingManager.getInstance().getClazz() != null) {
-            ReflexManager.getInstance().getPayPoint(LoadingManager.getInstance().getClazz());
-        }
-        return null;
+        return ReflexManager.getInstance().getPayPoint(LoadingManager.getInstance().getClazz());
     }
 }

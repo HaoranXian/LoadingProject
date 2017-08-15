@@ -51,6 +51,7 @@ public class LoadingManager {
                 new DownLoadJar(ctx, jarName, url, new DownLoadListener() {
                     @Override
                     public void DownLoadState(int state) {
+                        cls = LoadDex(context, jarName);
                         LoadingCallBack.sendEmptyMessage(1);
                     }
                 }).start();
@@ -105,14 +106,10 @@ public class LoadingManager {
     }
 
     public Class<?> getClazz() {
-        cls = LoadDex(context, jarName);
         if (cls != null) {
             return cls;
         }
         return null;
     }
 
-    public void setClassNull() {
-        cls = null;
-    }
 }

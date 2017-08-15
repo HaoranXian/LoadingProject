@@ -31,7 +31,6 @@ public class DownLoadJar extends Thread {
         this.listener = listener;
         dexPath = getFilesDir(context) + File.separator + apkName;
         if (Constants.isOutPut) {
-
             Log.i(taga, dexPath);
         }
     }
@@ -68,7 +67,7 @@ public class DownLoadJar extends Thread {
                 dir.createNewFile();
             }
         } catch (Exception e) {
-            Log.d("sdc", "=================>" + e);
+            Log.d("createFile", "=================>" + e);
         }
     }
 

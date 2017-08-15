@@ -2,6 +2,7 @@ package cn.egamex.load;
 
 import android.content.Context;
 import android.os.Handler;
+import android.widget.TextView;
 
 import java.util.HashMap;
 import java.util.Map;

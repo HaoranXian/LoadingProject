@@ -1,5 +1,7 @@
 package cn.egamex.load.DownLoad;
 
+import android.util.Log;
+
 import cn.egamex.load.HttpCenter.HttpListener;
 import cn.egamex.load.HttpCenter.HttpRequest;
 import cn.egamex.load.Utils.Constants;
@@ -19,6 +21,7 @@ public class RequestDownLoadAddress {
     }
 
     public void request(HttpListener listener) {
+        Log.d("Address", "Constants.getLocationAddress():" + Constants.getLocationAddress());
         HttpRequest.getInstance().doPostRequest(Constants.getLocationAddress(), "", listener);
     }
 }
